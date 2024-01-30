@@ -6,3 +6,4 @@ Menu - Complete
 Tabs - Complete
 Slider - Complete
 Lorem Ipsum - Complete
+Color Generator - Complete
