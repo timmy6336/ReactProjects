@@ -5,3 +5,4 @@ Accordian - Complete
 Menu - Complete
 Tabs - Complete
 Slider - Complete
+Lorem Ipsum - Complete
