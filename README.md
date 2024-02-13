@@ -7,3 +7,5 @@ Tabs - Complete
 Slider - Complete
 Lorem Ipsum - Complete
 Color Generator - Complete
+grocery Bud - Complete
+navbar - Complete
