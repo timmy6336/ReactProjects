@@ -9,3 +9,4 @@ Lorem Ipsum - Complete
 Color Generator - Complete
 grocery Bud - Complete
 navbar - Complete
+sidebar/modal - complete
