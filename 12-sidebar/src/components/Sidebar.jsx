@@ -10,7 +10,7 @@ const Sidebar = () => {
     <aside className={isSideBarOpen? 'sidebar show-sidebar':'sidebar'}>
       <div className='sidebar-header'>
         <img src={logo} alt='coding addict' className='logo'/>
-        <button className='clode-btn' onClick={closeSideBar}>
+        <button className='close-btn' onClick={closeSideBar}>
           <FaTimes/>
         </button>
       </div>
