@@ -1,10 +1,20 @@
 import { FaBehance, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa';
 export const links = [
   {
-    id: 1,
-    url: '/',
+    id:1,
     text: 'home',
-  }
+    url: '/'
+  },
+  {
+    id:2,
+    text: 'convex hull',
+    url: "/ConvexHull"
+  },
+  {
+    id:3,
+    text: 'a star',
+    url: "/AStar"
+  },
 ];
 
 export const social = [

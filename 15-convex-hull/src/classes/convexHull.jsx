@@ -86,26 +86,6 @@ const calculateAngles = (points) => {
     }
 }
 
-export const findConvexHullVisual = (points,setHull) => {
-    points = sortPoints(points)
-    let hull = []
-    hull.push(points[0])
-    hull.push(points[1])
-    setHull(hull)
-    for(let i = 2; i < points.length; i++){
-        let top = hull.pop()
-        setHull(hull)
-        while(ccw(hull[hull.length-1],top,points[i],true) <= 0){
-            top = hull.pop()
-            setHull(hull)
-        }
-        hull.push(top)
-        hull.push(points[i])
-        setHull(hull)
-    }
-    return hull
-}
-
 
 const sortPoints = (points) => {
     points.sort((a,b) => {
@@ -120,11 +100,3 @@ const sortPoints = (points) => {
     points = [ancor,...newPoints]
     return points
 }
-
-const sleep = (milliseconds) => {
-    const date = Date.now();
-    let currentDate = null;
-    do {
-      currentDate = Date.now();
-    } while (currentDate - date < milliseconds);
-  }

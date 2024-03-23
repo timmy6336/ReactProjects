@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { addDot, findConvexHull, findConvexHullVisual, getBorder } from "../classes/convexHull";
+import { useEffect, useState} from "react";
+import { addDot, findConvexHull, getBorder } from "../classes/convexHull";
 
 const Canvas = () => {
     const [dots,setDots] = useState([])
@@ -30,6 +30,7 @@ const Canvas = () => {
         findConvexHullVisual(points,setHull)
     }
 
+
     return (
         <div>
             <div>
@@ -40,7 +41,6 @@ const Canvas = () => {
                 </svg>
             </div>
             <button className="btn" onClick={() => setShowHull(!showHull)}>Show Convex Hull</button>
-            {/* <button className="btn" onClick={() => showHullCreation()}>Show Hull Creation</button>*/}
         </div>
     )
 }
