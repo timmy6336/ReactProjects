@@ -5,13 +5,21 @@ import { editSquares, updateOpenState } from '../classes/GridHelper'
 
 const Grid = () => {
     const [gridSize,setGridSize] = useState(50)
-    const [squares,setSquares] = useState([])
+    const [squares,setSquares] = useState(editSquares(gridSize))
     const [pressedKeys,setPressedKeys] = useState({})
     const [hasStart,setHasStart] = useState(false)
     const [hasEnd,setHasEnd] = useState(false)
     const [path,setPath] = useState([])
     const [expanded,setExpanded] = useState(null)
     const [isSetPath,setIsSetPath] = useState(false)
+    const clear = () => {
+        setSquares(editSquares(gridSize))
+        setHasStart(false)
+        setHasEnd(false)
+        setPath([])
+        setExpanded(null)
+        setIsSetPath(false)
+    }
     window.onmousedown = (event) => {
         let newPressed = pressedKeys
         newPressed['mouse'] = true
@@ -43,6 +51,10 @@ const Grid = () => {
 
     useEffect(() =>{
         const newSquares = [...squares]
+        for(const square of newSquares){
+            square.onPath = false
+            square.expanded = false
+        }
         for(const index of path){
             newSquares[index].onPath = true
         }
@@ -59,20 +71,27 @@ const Grid = () => {
     useEffect(()=> {
         if(hasStart && hasEnd && !isSetPath){
             const [newPath,newExpanded] = findPath(squares,gridSize)
-            if(newPath != null){setPath([...newPath])}
+            if(newPath != null){
+                setPath([])
+                setPath([...newPath])
+            }
+            setExpanded(null)
             setExpanded(newExpanded)
         }
     },[squares])
 
-    useEffect(()=>{setSquares(editSquares(gridSize))},[])
+    //useEffect(()=>{setSquares(editSquares(gridSize))},[])
 
     return (
-        <div className='grid' id='grid' 
-        style={{ 'gridTemplateColumns': `repeat(${gridSize},auto)`}}>
-        {squares.map((square,index) => {
-            const {id} = square
-            return <Square key={id} square={square} index={index} updateNode={updateNode} pressedKeys={pressedKeys}/>
-        })}
+        <div>
+            <div className='grid' id='grid' 
+            style={{ 'gridTemplateColumns': `repeat(${gridSize},auto)`}}>
+            {squares.map((square,index) => {
+                const {id} = square
+                return <Square key={id} square={square} index={index} updateNode={updateNode} pressedKeys={pressedKeys}/>
+            })}
+            </div>
+            <button className='btn' onClick={(clear)}>Clear</button>
         </div>
     )
 }
