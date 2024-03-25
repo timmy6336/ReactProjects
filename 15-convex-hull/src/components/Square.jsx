@@ -33,7 +33,7 @@ const Square = ({square,index,updateNode,pressedKeys}) => {
         return '	#B22222'
       }
       if(expanded){
-        return '#DCDCDC'
+        return '#00ffff'
       }
       return open?'white':'black'
     }

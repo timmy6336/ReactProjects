@@ -71,11 +71,10 @@ const Grid = () => {
     useEffect(()=> {
         if(hasStart && hasEnd && !isSetPath){
             const [newPath,newExpanded] = findPath(squares,gridSize)
+            setPath([])
             if(newPath != null){
-                setPath([])
                 setPath([...newPath])
             }
-            setExpanded(null)
             setExpanded(newExpanded)
         }
     },[squares])
