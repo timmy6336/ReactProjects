@@ -80,8 +80,6 @@ const Grid = () => {
         }
     },[squares])
 
-    //useEffect(()=>{setSquares(editSquares(gridSize))},[])
-
     return (
         <div>
             <div className='grid' id='grid' 
