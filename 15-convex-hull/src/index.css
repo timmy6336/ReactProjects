@@ -381,8 +381,8 @@ nav {
   padding: 1rem;
   margin-top:25px;
   outline: 2px solid black;
-  height: 750px;
-  width: 750px;
+  height: 820px;
+  width: 820px;
   display: grid;
   grid-template-columns: repeat(10,auto);
 }
