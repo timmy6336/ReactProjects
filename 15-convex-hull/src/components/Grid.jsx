@@ -4,7 +4,7 @@ import Square from './Square'
 import { editSquares, updateOpenState } from '../classes/GridHelper'
 
 const Grid = () => {
-    const [gridSize,setGridSize] = useState(70)
+    const [gridSize,setGridSize] = useState(60)
     const [squares,setSquares] = useState(editSquares(gridSize))
     const [pressedKeys,setPressedKeys] = useState({})
     const [hasStart,setHasStart] = useState(false)

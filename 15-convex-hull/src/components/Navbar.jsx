@@ -28,7 +28,7 @@ function Navbar() {
                         {links.map((link) => {
                             const {id,url,text} = link
                             return(
-                            <li key={id}>
+                            <li className="link" key={id}>
                                 <a href={url}>{text}</a>
                             </li>)})}
                     </ul>
@@ -38,7 +38,7 @@ function Navbar() {
                     {social.map((socialIcon) => {
                         const {id,url,icon} = socialIcon
                         return(
-                            <li key={id}>
+                            <li className="icon" key={id}>
                                 <a href={url}>{icon}</a>
                             </li>
                         )

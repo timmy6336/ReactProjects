@@ -1,4 +1,3 @@
-import './App.css'
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import { ConvexHull, Home, AStar } from './pages'
 import Navbar from './components/Navbar'

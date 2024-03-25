@@ -38,9 +38,7 @@ const Square = ({square,index,updateNode,pressedKeys}) => {
       return open?'white':'black'
     }
   return (
-    <div className="square" style={{background: colorCheck()}} onMouseEnter={handleScroll} onClick={handleClick}>
-
-    </div>
+    <div className="square" style={{background: colorCheck()}} onMouseEnter={handleScroll} onClick={handleClick}/>
   )
 }
 
